@@ -1,7 +1,4 @@
-:global .active{
-  color: rgb(199, 52, 52);
-  cursor: default;
-}
+
 header{
   display: flex;
   height: 65px;

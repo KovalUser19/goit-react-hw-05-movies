@@ -11,24 +11,22 @@ export const Home = () => {
       try {
         const respons = await fetchMovies();
         console.log(respons);
-          setMovies(respons.data.results)
+        setMovies(respons.data.results)
       }
       catch (error) {
         console.error("Error fetching movies:", error);
       }
     }
     fetchData()
-  },[])
+  }, [])
 
   return (
-      <ul className={css.items}>
+    <ul className={css.items}>
       {movies.map(movie => (
-          <Link  className={css.item} key={movie.id} to='/:movieId'>
-           <li>{movie.title ? movie.title : movie.name}</li>
-          </Link>
+        <li  key={movie.id}>
+          <Link to={`/movies/${movie.id}`} className={css.item}>{movie.title ? movie.title : movie.name}</Link>
+        </li>
       ))}
-        </ul>
-
-
+    </ul>
   )
 }

@@ -1,0 +1,17 @@
+.genres{
+display: flex;
+gap: 20px;
+font-size: 18px;
+}
+.wrapper{
+  display: flex;
+  gap: 20px;
+  margin-right: 20px;
+}
+.additional{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 1px 1px 10px gray;
+  padding-bottom: 20px;
+}

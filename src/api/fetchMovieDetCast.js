@@ -1,8 +1,8 @@
 import axios from "axios";
-export const fetchMovieDetCast = async () => {
+export const fetchMovieDetCast = async (id) => {
   const options = {
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/movie/movie_id/credits',
+    url: `https://api.themoviedb.org/3/movie/${id}/credits`,
     params: { language: 'en-US' },
     headers: {
       accept: 'application/json',

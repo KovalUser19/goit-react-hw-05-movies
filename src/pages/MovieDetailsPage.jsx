@@ -1,12 +1,17 @@
- import { MovieDetails } from "components/MovieDetails/MovieDetails"
+/* import { MovieDetails } from "components/MovieDetails/MovieDetails" */
+import { Suspense, lazy } from "react";
 import { Outlet } from "react-router-dom"
+const MovieDetails = lazy(()=>('../components/MovieDetails/MovieDetails.jsx'))
 
-export const MovieDetailsPage = () => {
+ const MovieDetailsPage = () => {
   return (
     <>
-    <MovieDetails/>
+      <MovieDetails />
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
+      </Suspense>
 
     </>
   )
 }
+export default MovieDetailsPage;

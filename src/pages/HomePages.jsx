@@ -1,5 +1,9 @@
-import { Home } from "components/Home/Home"
-export const HomePages = () => {
+
+import { lazy } from "react";
+ const Home = lazy(()=>('../components/Home/Home.jsx'))
+
+
+ const HomePages = () => {
   return (
     <>
       <h1>Trending today</h1>
@@ -7,3 +11,4 @@ export const HomePages = () => {
   </>
   )
 }
+export default HomePages;

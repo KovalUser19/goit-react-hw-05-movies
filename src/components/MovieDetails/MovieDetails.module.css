@@ -13,5 +13,9 @@ font-size: 18px;
   flex-direction: column;
   gap: 10px;
   box-shadow: 1px 1px 10px gray;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.info{
+  margin: 0;
 }

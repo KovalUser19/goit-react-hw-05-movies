@@ -1,7 +1,4 @@
 import Home from 'components/Home/Home'
-import { lazy } from "react";
- /* const Home = lazy(()=>('../components/Home/Home.jsx')) */
-
 
  const HomePages = () => {
   return (

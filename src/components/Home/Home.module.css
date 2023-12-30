@@ -7,7 +7,7 @@
  color: rgb(75, 75, 212);
  font-weight: 600;
  font-size: 17px;
-  width: fit-content;
+ width: fit-content;
 }
 .item:hover{
   color: rgb(199, 61, 151);

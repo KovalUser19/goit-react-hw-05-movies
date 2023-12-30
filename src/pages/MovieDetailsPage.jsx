@@ -2,15 +2,14 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom"
 
- const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
   return (
     <>
       <MovieDetails />
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-
     </>
   )
-}
+};
 export default MovieDetailsPage;

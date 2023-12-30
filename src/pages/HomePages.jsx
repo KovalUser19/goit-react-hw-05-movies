@@ -1,11 +1,11 @@
 import Home from 'components/Home/Home'
 
- const HomePages = () => {
+const HomePages = () => {
   return (
     <>
       <h1>Trending today</h1>
-      <Home/>
-  </>
+      <Home />
+    </>
   )
-}
+};
 export default HomePages;

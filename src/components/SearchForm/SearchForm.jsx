@@ -1,41 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import css from './SearchForm.module.css';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import { fetchSearchMovie } from 'api/fetchSearchMovie';
 
-  const SearchForm = () => {
-  const [searchMovie, setSearchMovie] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-  console.log(location);
+const SearchForm = ({ onSubmit }) => {
 
-  const query = searchParams.get('query') ?? '';
-  console.log(query);
-
-  useEffect(() => {
-    const getSearhMovie = async () => {
-    try {
-      const res = await fetchSearchMovie(query);
-      console.log(res);
-      console.log(res.results);
-      setSearchMovie(res.results)
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }
-    getSearhMovie()
-  },[query])
+ const [query, setQuery] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    onSubmit(query);
+    setQuery('')
   }
-  const updateQueryString = (e) => {
+  const handleChange = (e) => {
     if (e.target.value === '') {
-    return setSearchParams({})
-  }
-   setSearchParams({ query: e.target.value })
-  }
+        return setQuery('')
+      }
+    setQuery(e.target.value)
+    };
 
   return (
     <>
@@ -46,20 +26,12 @@ import { fetchSearchMovie } from 'api/fetchSearchMovie';
         type="text"
         value={query}
         autoComplete="off"
-          onChange={updateQueryString}
+          onChange={handleChange}
       >
       </input>
       <button type="submit">Search</button>
     </form>
-
-    <ul className={css.items}>
-      {searchMovie.map(movie => (
-        <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{from:location}} className={css.item}>{movie.title ? movie.title : movie.name}</Link>
-        </li>
-      ))}
-      </ul>
-      </>
+   </>
   )
 }
 export default SearchForm;

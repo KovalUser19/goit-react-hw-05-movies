@@ -16,3 +16,21 @@
   outline: none;
   border: 1px solid gray;
 }
+.items{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* color: rgb(75, 75, 212);
+    font-weight: 600;
+    font-size: 17px;
+    width: fit-content; */
+}
+.item{
+  color: rgb(75, 75, 212);
+    font-weight: 600;
+    font-size: 17px;
+    width: fit-content;
+}
+.item:hover {
+  color: rgb(199, 61, 151);
+}

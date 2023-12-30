@@ -1,7 +1,4 @@
-
-/* import { SearchForm } from "components/SearchForm/SearchForm" */
-import { lazy } from "react";
- const SearchForm = lazy(()=>('../components/SearchForm/SearchForm.jsx'))
+import SearchForm from "components/SearchForm/SearchForm";
 
  const MoviesPages = () => {
   return (

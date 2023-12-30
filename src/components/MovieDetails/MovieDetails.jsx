@@ -26,11 +26,11 @@ import css from './MovieDetails.module.css'
       finally {
         setIsinfo(<h1>No iformation</h1>)
       }
-    },[movieId,movie]);
+    },[movie,movieId]);
 
   useEffect(() => {
     getMovie()
-  }, [getMovie])
+  }, [])
 
   const vote = Math.floor(movie.vote_average * 10);
   const  posterPath = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`

@@ -52,10 +52,10 @@ import { fetchSearchMovie } from 'api/fetchSearchMovie';
       <button type="submit">Search</button>
     </form>
 
-    <ul>
+    <ul className={css.items}>
       {searchMovie.map(movie => (
-        <li  key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{from:location}}>{movie.title ? movie.title : movie.name}</Link>
+        <li key={movie.id}>
+          <Link to={`/movies/${movie.id}`} state={{from:location}} className={css.item}>{movie.title ? movie.title : movie.name}</Link>
         </li>
       ))}
       </ul>
